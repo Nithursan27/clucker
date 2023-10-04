@@ -1,6 +1,25 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python,django,virtualenv,linux,macos,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,django,virtualenv,linux,macos,windows
 
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
 ### Django ###
 *.log
 *.pot
