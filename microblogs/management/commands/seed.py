@@ -11,11 +11,11 @@ class Command(BaseCommand):
         for i in range(0,100):
             name = self.faker.name()
             User.objects.create_user(
-                "@" + name,
+                "@" + name.split(" ")[0] + name.split(" ")[1],
                 first_name = name.split(" ")[0],
                 last_name = name.split(" ")[1],
                 email = name + "@example.org",
-                password = name + "123",
+                password = name.split(" ")[0] + "123",
                 bio = self.faker.text(),
             )
     
