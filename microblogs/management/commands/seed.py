@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand, CommandError
 from faker import Faker
-from .models import User
+from microblogs.models import User
 
 class Command(BaseCommand):
     def __init__(self):
@@ -10,7 +10,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         for i in range(0,100):
             name = self.faker.name()
-            User.object.create_user(
+            User.objects.create_user(
                 "@" + name,
                 first_name = name.split(" ")[0],
                 last_name = name.split(" ")[1],
