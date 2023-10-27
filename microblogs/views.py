@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from .forms import SignUpForm, LogInForm
 from django.contrib.auth import authenticate, login
+from django.contrib import messages
 
 def home(request):
     return render(request, "home.html")
@@ -29,5 +30,6 @@ def log_in(request):
             if user is not None:
                 login(request, user)
                 return redirect("feed")
+        messages.add_message(request, messages.ERROR,"Incorrect login")
     form = LogInForm()
     return render(request,"log_in.html", {"form": form})
